@@ -25,7 +25,7 @@ sudo a2enmod lbmethod_byrequests
 #Editamos el archivo 000-default.conf que está en el directorio /etc/apache2/sites-enabled
 cd /home/ubuntu
 rm -r practica8/
-sudo git clone https://github.com/ElEmEnTzxc/practica8.git
+sudo git clone https://github.com/antoniobm1/practica8.git
 cd /home/ubuntu/practica8
 sudo cp 000-default.conf /etc/apache2/sites-enabled/
 

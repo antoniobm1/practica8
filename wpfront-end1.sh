@@ -49,8 +49,6 @@ chown www-data:www-data * -R
 # Instalamos el servidor NFS
 sudo apt-get install nfs-kernel-server -y
 
-# Instalamos el servidor NFS
-sudo apt-get install nfs-kernel-server -y
 
 # Cambiamos los permisos al directorio que vamos a compartir
 sudo chown nobody:nogroup /var/www/html/wordpress/wp-content

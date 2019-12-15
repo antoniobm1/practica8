@@ -72,8 +72,6 @@ rm -r practica8
 sudo git clone https://github.com/antoniobm1/practica8.git
 mv /home/ubuntu/practica8/.htaccess /var/www/html/.htaccess
 
-#Creamos uploads
-mkdir /var/www/html/wordpress/wp-content/uploads -p
 
 # Security Keys
 #Borramos las keys

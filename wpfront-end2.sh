@@ -54,7 +54,7 @@ sudo mount 3.86.142.103:/var/www/html/wordpress/wp-content /var/www/html/wordpre
 
 # Editamos el archivo /etc/fstab
 cd /etc/
-echo "ipfrontal1:/var/www/html/wordpress/wp-content /var/www/html/wordpress/wp-content  nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0" >> /etc/fstab
+echo "3.86.142.103:/var/www/html/wordpress/wp-content /var/www/html/wordpress/wp-content  nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0" >> /etc/fstab
 
 # Dirección del sitio y direccion URL
 cd /var/www/html/wordpress/

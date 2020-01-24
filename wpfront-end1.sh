@@ -36,12 +36,12 @@ wget https://wordpress.org/latest.tar.gz
 tar -zxvf latest.tar.gz
 
 # Modificamos el archivo wp-config-example.php
-cd /var/www/html/wordpress
+mv /var/www/html/wordpress/* /var/www/html
 mv wp-config-sample.php wp-config.php
 sed -i 's/database_name_here/wordpress/' wp-config.php
 sed -i 's/username_here/wordpress/' wp-config.php
 sed -i 's/password_here/wordpress/' wp-config.php
-sed -i 's/localhost/3.83.15.117/' wp-config.php
+sed -i 's/localhost/184.73.143.208/' wp-config.php
 
 # Concedemos permisos a Wordpress
 chown www-data:www-data * -R
@@ -49,22 +49,25 @@ chown www-data:www-data * -R
 # Instalamos el servidor NFS
 sudo apt-get install nfs-kernel-server -y
 
-
 # Cambiamos los permisos al directorio que vamos a compartir
-sudo chown nobody:nogroup /var/www/html/wordpress/wp-content
+sudo chown nobody:nogroup /var/www/html/
 
 # Editamos el archivo /etc/exports
 cd /etc/
-echo "/var/www/html/wordpress/wp-content      34.201.117.162(rw,sync,no_root_squash,no_subtree_check)" > /etc/exports
+echo "/var/www/html/      34.227.143.77(rw,sync,no_root_squash,no_subtree_check)" > /etc/exports
 
 
 # Reiniciamos el servicio nfs-kernel-server
 sudo /etc/init.d/nfs-kernel-server restart
 
 # Dirección del sitio y direccion URL
-cd /var/www/html/wordpress/
-echo "define( 'WP_SITEURL', 'http://54.243.14.181/wordpress' );" >> wp-config.php
-echo "define( 'WP_HOME', 'http://54.243.14.181' );" >> wp-config.php
+cd /var/www/html/
+echo "define( 'WP_SITEURL', 'http://3.83.206.162' );" >> wp-config.php
+echo "define( 'WP_HOME', 'http://3.83.206.162' );" >> wp-config.php
+
+
+
+
 
 # Configuración de WordPress en un directorio que no es el raíz
 sudo cp /var/www/html/wordpress/index.php /var/www/html/index.php
